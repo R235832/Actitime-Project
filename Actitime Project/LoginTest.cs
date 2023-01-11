@@ -39,5 +39,14 @@ namespace Actitime_Project
             string printMessage=logindata.GetErrorMessage();
             Assert.That(printMessage.Contains(errorMessage));
         }
+        [Test]
+        public void ForgotPasswordLink()
+        {
+            LoginPage logindata=new LoginPage(driver);
+            logindata.ForgotpassswordLink();
+            forgotPasswordPage fp = new forgotPasswordPage(driver);
+            string headerPage= fp.Headercheck();
+            Assert.That(headerPage.Contains("Forgot your password?"));
+        }
     }
 }

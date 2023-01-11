@@ -14,6 +14,7 @@ namespace Actitime_Project.Pages
         private By _clickOnLoginLocator = By.Id("loginButton");
         private By _forgotpasswordLocator =By.XPath("//a[normalize-space()='Forgot your password?']");
         private By _errorLocator = By.XPath("//span[normalize-space()='Username or Password is invalid. Please try again.']");
+        private By _forgotpassswordLinkLocator = By.XPath("//a[normalize-space()='Forgot your password?']");
         private IWebDriver driver;
         public LoginPage(IWebDriver driver)
         { 
@@ -39,7 +40,12 @@ namespace Actitime_Project.Pages
         {
             return driver.FindElement(_errorLocator).Text;
         }
+        public void ForgotpassswordLink()
+        {
+            driver.FindElement(_forgotpassswordLinkLocator).Click();
+           
 
+        }
 
     }
 }
